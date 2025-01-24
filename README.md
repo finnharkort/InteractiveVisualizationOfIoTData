@@ -27,26 +27,10 @@ This project aims to create an **interactive, real-time dashboard** for visualiz
 6. **User-Friendly Interface:**  
    A simple and intuitive interface minimizing the learning curve and enabling quick access to insights.
 
-## Milestones and Deliverables
+## Contribution Guidelines
 
-| Milestone                     | Due Date   | Status         | Progress |
-|-------------------------------|------------|----------------|----------|
-| Planning and Organizing       | 01/21/25   | On Schedule    | 100%     |
-| Repository Setup              | 01/27/25   | Behind Schedule| 0%       |
-| Programming Language Selection| 01/31/25   | Behind Schedule| 0%       |
-| Visualization Platform Selection | 02/15/25| On Schedule    | 0%       |
-| Final Prototype               | 05/20/25   | On Schedule    | 0%       |
+This project is developed by Group 8, enrolled in the course DD1367 at KTH, and contributions are limited to the project members. All changes must follow the Scrum process, with peer reviews and approvals required before merging.
 
-More details can be found in the [Project Milestones](#).
+## License
 
-## Getting Started
-
-### Prerequisites
-- Git
-- Python (preferred version TBD)
-- A development environment (IDE of your choice)
-
-### Setup Instructions
-1. Clone the repository:  
-   ```bash
-   git clone [repository-link-placeholder]
+This project is proprietary and developed under an NDA with FUCHS LUBRICANTS SWEDEN AB. Unauthorized use, modification, or distribution is strictly prohibited.
