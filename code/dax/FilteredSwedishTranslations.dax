@@ -1,0 +1,5 @@
+FilteredSwedishTranslations = 
+    FILTER(
+        'CommentTranslation',
+        'CommentTranslation'[GermanComment] IN VALUES(Components[Comment])
+    )

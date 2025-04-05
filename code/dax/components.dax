@@ -1,0 +1,8 @@
+Components = DISTINCT(
+        UNION(
+            SELECTCOLUMNS(DatExpStatus_Motor, "Component", DatExpStatus_Motor[Component], "Comment", DatExpStatus_Motor[Comment]),
+            SELECTCOLUMNS(DatExpStatus_Temperature, "Component", DatExpStatus_Temperature[Component], "Comment", DatExpStatus_Temperature[Comment]),
+            SELECTCOLUMNS(DatExpStatus_Power, "Component", DatExpStatus_Power[Component], "Comment", DatExpStatus_Power[Comment]),
+            SELECTCOLUMNS(DatExpStatus_Pressure, "Component", DatExpStatus_Pressure[Component], "Comment", DatExpStatus_Pressure[Comment])
+        )
+    )

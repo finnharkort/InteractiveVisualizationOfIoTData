@@ -7,8 +7,7 @@ SELECT DISTINCT TOP 90000 t.Timestamp,
                     CASE
                         WHEN o.ID IS NOT NULL THEN SUBSTRING(o.Number, 4, LEN(o.Number) - 3)
                         ELSE t.[Order]
-                    END AS OrderNumber,
-                    DATEPART(HOUR, t.Timestamp) AS HourPart -- This extracts the hour part from the timestamp
+                    END AS OrderNumber
 FROM DatExpStatus_Temperature t
 LEFT JOIN DatExpComponent c ON t.Component = c.ID
 LEFT JOIN DatExpOrder o ON t.[Order] = o.ID

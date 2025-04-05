@@ -1,0 +1,8 @@
+Orders = DISTINCT(
+    UNION(
+        SELECTCOLUMNS(DatExpStatus_Motor, "OrderNumber", DatExpStatus_Motor[OrderNumber]),
+        SELECTCOLUMNS(DatExpStatus_Temperature, "OrderNumber", DatExpStatus_Temperature[OrderNumber]),
+        SELECTCOLUMNS(DatExpStatus_Power, "OrderNumber", DatExpStatus_Power[OrderNumber]),
+        SELECTCOLUMNS(DatExpStatus_Pressure, "OrderNumber", DatExpStatus_Pressure[OrderNumber])
+    )
+)
