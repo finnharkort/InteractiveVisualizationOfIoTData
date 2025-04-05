@@ -13,11 +13,15 @@ SELECT DISTINCT TOP 90000 m.Timestamp,
  CASE
      WHEN CHARINDEX(' ', c.Comment) > 0 THEN SUBSTRING(c.Comment, 1, CHARINDEX(' ', c.Comment) - 1)
      ELSE c.Comment
- END AS EquipmentName
-FROM DatExpStatus_Motor m
-LEFT JOIN DatExpComponent c ON m.Component = c.ID
-LEFT JOIN DatExpOrder o ON m.[Order] = o.ID
-WHERE m.Timestamp >= DATEADD(DAY, -7, GETUTCDATE())
+ END AS EquipmentName,
+ mtrl.Name AS MaterialName -- Added this line to get the material's name
+ 
+FROM DatExpStatus_Motor m 
+LEFT JOIN DatExpComponent c ON m.Component = c.ID 
+LEFT JOIN DatExpOrder o ON m.[Order] = o.ID 
+LEFT JOIN DatExpMaterial mtrl ON o.Material = mtrl.ID -- New join for DatExpMaterial
+ 
+WHERE m.Timestamp >= DATEADD(DAY, -7, GETUTCDATE()) 
     AND m.[Order] <> '00000000-0000-0000-0000-000000000000'
     AND m.TargetState = 1
 ORDER BY m.Timestamp DESC
