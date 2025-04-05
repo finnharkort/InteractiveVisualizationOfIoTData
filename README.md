@@ -29,7 +29,7 @@ This project aims to create an **interactive, real-time dashboard** for visualiz
 
 ## Contribution Guidelines
 
-This project is developed by Group 8, a group consisting of students enrolled in the course DD1367 at KTH, and contributions are limited to the group members. All changes must follow the Scrum process, with peer reviews and approvals required before merging.
+This project is developed by Group 8, a group consisting of students enrolled in the course DD1367 at KTH, and contributions are limited to the group members. All changes are to be documented according to WORKFLOW.md
 
 ## License
 
