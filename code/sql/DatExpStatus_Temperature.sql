@@ -1,3 +1,4 @@
+
 SELECT DISTINCT TOP 90000 t.Timestamp,
                     t.Value,
                     t.[Order],
