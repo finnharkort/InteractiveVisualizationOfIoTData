@@ -1,0 +1,5 @@
+Connections made:
+
+GermanComment - GermanComment - Comment
+
+Slicer atttribute: SwedishComment from FilteredSwedishTranslations
