@@ -1,0 +1,8 @@
+Equipments = DISTINCT(
+    UNION(
+        SELECTCOLUMNS(DatExpStatus_Motor, "EquipmentName", DatExpStatus_Motor[EquipmentName]),
+        SELECTCOLUMNS(DatExpStatus_Temperature, "EquipmentName", DatExpStatus_Temperature[EquipmentName]),
+        SELECTCOLUMNS(DatExpStatus_Power, "EquipmentName", DatExpStatus_Power[EquipmentName]),
+        SELECTCOLUMNS(DatExpStatus_Pressure, "EquipmentName", DatExpStatus_Pressure[EquipmentName])
+    )
+)

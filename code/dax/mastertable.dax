@@ -1,0 +1,32 @@
+MasterTable = DISTINCT(
+    UNION(
+        SELECTCOLUMNS(
+            DatExpStatus_Motor,
+            "OrderNumber", DatExpStatus_Motor[OrderNumber],
+            "MaterialName", DatExpStatus_Motor[MaterialName],
+            "Comment", DatExpStatus_Motor[Comment],
+            "EquipmentName", DatExpStatus_Motor[EquipmentName]
+        ),
+        SELECTCOLUMNS(
+            DatExpStatus_Temperature,
+            "OrderNumber", DatExpStatus_Temperature[OrderNumber],
+            "MaterialName", DatExpStatus_Temperature[MaterialName],
+            "Comment", DatExpStatus_Temperature[Comment],
+            "EquipmentName", DatExpStatus_Temperature[EquipmentName]
+        ),
+        SELECTCOLUMNS(
+            DatExpStatus_Pressure,
+            "OrderNumber", DatExpStatus_Pressure[OrderNumber],
+            "MaterialName", DatExpStatus_Pressure[MaterialName],
+            "Comment", DatExpStatus_Pressure[Comment],
+            "EquipmentName", DatExpStatus_Pressure[EquipmentName]
+        ),
+        SELECTCOLUMNS(
+            DatExpStatus_Power,
+            "OrderNumber", DatExpStatus_Power[OrderNumber],
+            "MaterialName", DatExpStatus_Power[MaterialName],
+            "Comment", DatExpStatus_Power[Comment],
+            "EquipmentName", DatExpStatus_Power[EquipmentName]
+        )
+    )
+)
