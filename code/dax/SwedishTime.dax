@@ -1,0 +1,11 @@
+SwedishTime = 
+VAR DateTimeUTC = DatExpStatus_Temperature[FormattedTimeStamp] -- Change this to the table you are adding the column to
+VAR YearValue = YEAR(DateTimeUTC)
+VAR DSTStart = 
+    DATE(YearValue, 3, 31) - WEEKDAY(DATE(YearValue, 3, 31), 2) + 1 + TIME(2, 0, 0)
+VAR DSTEnd = 
+    DATE(YearValue, 10, 31) - WEEKDAY(DATE(YearValue, 10, 31), 2) + TIME(3, 0, 0)
+VAR IsDST = DateTimeUTC >= DSTStart && DateTimeUTC < DSTEnd
+VAR OffsetHours = IF(IsDST, 2, 1)  -- CEST = UTC+2, CET = UTC+1
+RETURN 
+    DateTimeUTC + TIME(OffsetHours, 0, 0)
