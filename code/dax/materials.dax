@@ -1,8 +1,21 @@
-Materials = DISTINCT(
+Materials = 
+DISTINCT(
     UNION(
-        SELECTCOLUMNS(DatExpStatus_Motor, "MaterialName", DatExpStatus_Motor[MaterialName]),
-        SELECTCOLUMNS(DatExpStatus_Temperature, "MaterialName", DatExpStatus_Temperature[MaterialName]),
-        SELECTCOLUMNS(DatExpStatus_Power, "MaterialName", DatExpStatus_Power[MaterialName]),
-        SELECTCOLUMNS(DatExpStatus_Pressure, "MaterialName", DatExpStatus_Pressure[MaterialName])
+        SELECTCOLUMNS(
+            FILTER(DatExpStatus_Motor, NOT(ISBLANK(DatExpStatus_Motor[MaterialName]))),
+            "MaterialName", DatExpStatus_Motor[MaterialName]
+        ),
+        SELECTCOLUMNS(
+            FILTER(DatExpStatus_Temperature, NOT(ISBLANK(DatExpStatus_Temperature[MaterialName]))),
+            "MaterialName", DatExpStatus_Temperature[MaterialName]
+        ),
+        SELECTCOLUMNS(
+            FILTER(DatExpStatus_Power, NOT(ISBLANK(DatExpStatus_Power[MaterialName]))),
+            "MaterialName", DatExpStatus_Power[MaterialName]
+        ),
+        SELECTCOLUMNS(
+            FILTER(DatExpStatus_Pressure, NOT(ISBLANK(DatExpStatus_Pressure[MaterialName]))),
+            "MaterialName", DatExpStatus_Pressure[MaterialName]
+        )
     )
 )
